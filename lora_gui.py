@@ -663,9 +663,9 @@ def train_model(
 
     run_cmd = f'accelerate launch --num_cpu_threads_per_process={num_cpu_threads_per_process}'
     if sdxl:
-        run_cmd += f' "./sdxl_train_network.py"'
+        run_cmd += f' "/src/kohya_ss/sdxl_train_network.py"'
     else:
-        run_cmd += f' "./train_network.py"'
+        run_cmd += f' "/src/kohya_ss/train_network.py"'
 
     if v2:
         run_cmd += ' --v2'
