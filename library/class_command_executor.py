@@ -13,7 +13,7 @@ class CommandExecutor:
         if self.process and self.process.poll() is None:
             log.info("The command is already running. Please wait for it to finish.")
         else:
-            self.process = subprocess.Popen(run_cmd, shell=True)
+            self.process = subprocess.run(run_cmd, shell=True, capture_output=True)
 
     def kill_command(self):
         if self.process and self.process.poll() is None:
